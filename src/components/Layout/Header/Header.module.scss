@@ -1,0 +1,149 @@
+.Header {
+  position: sticky;
+  top: 0;
+  height: 50px;
+  padding: 7px;
+  z-index: 5;
+  background-color: var(--color-primary);
+
+  &__container {
+    display: flex;
+    margin: auto;
+
+    align-items: center;
+    max-width: 1400px;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.search {
+  margin-right: auto;
+  margin-left: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 101;
+  height: 100%;
+  width: 40rem;
+
+  @media screen and (max-width: 815px) {
+    margin-left: 0;
+  }
+
+  align-self: stretch;
+  &__input {
+    font-family: inherit;
+    font-size: 1.7rem;
+
+    background-color: #69abc3;
+    border: none;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3.25rem;
+    height: 100%;
+    &:focus {
+      outline: none;
+      width: 100%;
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-1);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+  &__icon {
+    width: 2.5rem;
+    color: var(--color-grey-light-1);
+  }
+}
+
+.nav-right {
+  display: flex;
+  // align-self: stretch;
+  height: 100%;
+
+  align-items: center;
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+  &__icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    color: var(--color-grey-light-1);
+    transition: all 0.4s;
+
+    &:hover {
+      color: #69abc3;
+    }
+  }
+  &__notification {
+    font-size: 0.8rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-grey-dark-3);
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.nav-left {
+  display: flex;
+  // align-self: stretch;
+  height: 100%;
+
+  align-items: center;
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-box {
+    position: relative;
+    display: flex;
+  }
+  &__icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    color: var(--color-grey-light-1);
+    transition: all 0.4s;
+
+    &:hover {
+      color: #69abc3;
+    }
+  }
+}

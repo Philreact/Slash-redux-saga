@@ -1,0 +1,12 @@
+.CardList {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: 3rem;
+}
