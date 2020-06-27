@@ -9,6 +9,7 @@ import { AppState } from "../../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AppActions } from "../../../store/actions/types/actionTypes";
 import { bindActionCreators } from "redux";
+import IonSearchbar from "./IonSearchbar";
 
 interface HeaderPageProps {
   id?: string;
@@ -48,7 +49,7 @@ const Header = (props: Props) => {
 
   const onFocusHandler = () => {};
   return (
-    <div className={classes["Header"]}>
+    <div data-test="component-header" className={classes["Header"]}>
       <div className={classes["Header__container"]}>
         <div className={classes["nav-left"]}>
           <div className={classes["nav-left__icon-box"]}>
@@ -61,25 +62,13 @@ const Header = (props: Props) => {
             />
           </div>
         </div>
+        <IonSearchbar
+          inputRef={inputRef}
+          onChangeHandler={onChangeHandler}
+          onFocusHandler={onFocusHandler}
+          searchKeyword={searchKeyword}
+        />
 
-        <form className={classes.search}>
-          <input
-            ref={inputRef}
-            type="text"
-            className={classes.search__input}
-            placeholder="Search"
-            onChange={onChangeHandler}
-            onFocus={onFocusHandler}
-            value={searchKeyword}
-          />
-          <div className={classes.search__button}>
-            <Icon
-              path={mdiMagnify}
-              title="Search"
-              className={classes.search__icon}
-            />
-          </div>
-        </form>
         <div className={classes["nav-right"]}>
           <div className={classes["nav-right__icon-box"]}>
             <Icon

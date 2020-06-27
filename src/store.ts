@@ -20,7 +20,7 @@ const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
 
 // const middleware = [thunk as ThunkMiddleware<AppState, AppActions>];
-const middleware = [sagaMiddleware];
+export const middleware = [sagaMiddleware];
 let composeEnhancers = compose;
 if (process.browser) {
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
