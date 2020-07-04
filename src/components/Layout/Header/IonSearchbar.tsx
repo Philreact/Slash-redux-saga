@@ -12,7 +12,7 @@ interface Props {
 
 const IonSearchbar = (props: Props) => {
   return (
-    <form className={classes.search}>
+    <form data-test="component-input" className={classes.search}>
       <input
         ref={props.inputRef}
         type="text"
@@ -21,6 +21,7 @@ const IonSearchbar = (props: Props) => {
         onChange={props.onChangeHandler}
         onFocus={props.onFocusHandler}
         value={props.searchKeyword}
+        data-test="search-onchange"
       />
       <div className={classes.search__button}>
         <Icon

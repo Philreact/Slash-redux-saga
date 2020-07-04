@@ -6,7 +6,7 @@ import { Song } from "../../../store/actions/types/types";
 import { AppState } from "../../../store";
 import { ThunkDispatch } from "redux-thunk";
 import { AppActions } from "../../../store/actions/types/actionTypes";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 import { addFavourite, removeFavourite } from "../../../store/actions/actions";
 import Spinner from "../../Spinner/Spinner";
 
@@ -87,7 +87,7 @@ const mapStateToProps = (
 };
 
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<any, any, AppActions>,
+  dispatch: Dispatch,
   ownProps: HeaderPageProps
 ): LinkDispatchProps => ({
   addFavourite: bindActionCreators(addFavourite, dispatch),

@@ -18,6 +18,8 @@ export function* searchSongsFuncSaga(action: {
 
     yield put(actions.searchSongs(res.data.results));
   } catch (error) {
+    console.log(error);
+
     yield put(actions.loading(false));
   }
 }

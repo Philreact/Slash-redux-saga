@@ -1,14 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import classes from "./Header.module.scss";
 import Icon from "@mdi/react";
-import { mdiHeart, mdiGestureTap, mdiMagnify } from "@mdi/js";
+import { mdiHeart, mdiGestureTap } from "@mdi/js";
 import { connect } from "react-redux";
 import { searchSongsFunc } from "../../../store/actions/actions";
 import { Song } from "../../../store/actions/types/types";
 import { AppState } from "../../../store";
-import { ThunkDispatch } from "redux-thunk";
-import { AppActions } from "../../../store/actions/types/actionTypes";
-import { bindActionCreators } from "redux";
+
+import { bindActionCreators, Dispatch } from "redux";
 import IonSearchbar from "./IonSearchbar";
 
 interface HeaderPageProps {
@@ -20,7 +19,7 @@ interface HeaderPageState {}
 type Props = HeaderPageProps & LinkStateProps & LinkDispatchProps;
 
 const Header = (props: Props) => {
-  const [searchKeyword, setSearchKeyword] = useState("Rush");
+  const [searchKeyword, setSearchKeyword] = React.useState("Rush");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { getSongs } = props;
@@ -105,7 +104,7 @@ const mapStateToProps = (
   };
 };
 const mapDispatchToProps = (
-  dispatch: ThunkDispatch<any, any, AppActions>,
+  dispatch: Dispatch,
   ownProps: HeaderPageProps
 ): LinkDispatchProps => ({
   getSongs: bindActionCreators(searchSongsFunc, dispatch),
